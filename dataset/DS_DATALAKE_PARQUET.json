@@ -1,0 +1,41 @@
+{
+	"name": "DS_DATALAKE_PARQUET",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_DATALAKE",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"schema": {
+				"type": "string"
+			},
+			"table": {
+				"type": "string"
+			},
+			"cdc_col": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().cdc_col",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@dataset().table",
+					"type": "Expression"
+				},
+				"fileSystem": {
+					"value": "@dataset().schema",
+					"type": "Expression"
+				}
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}

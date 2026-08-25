@@ -20,16 +20,16 @@ SQL,
 GitHub
 
 🚀 **Key Features**
-Incremental data ingestion using CDC/watermark concepts\n
-Dynamic and parameterized ADF pipelines
-Metadata-driven ingestion framework
-Backfill data processing
-Bronze, Silver and Gold Medallion Architecture
-Delta Lake implementation
-Slowly Changing Dimensions (SCD)
-PySpark data transformations
-Lakeflow Declarative Pipelines
-Gold-layer business transformations
+Incremental data ingestion using CDC/watermark concepts,
+Dynamic and parameterized ADF pipelines,
+Metadata-driven ingestion framework,
+Backfill data processing,
+Bronze, Silver and Gold Medallion Architecture,
+Delta Lake implementation,
+Slowly Changing Dimensions (SCD),
+PySpark data transformations,
+Lakeflow Declarative Pipelines,
+Gold-layer business transformations,
 Pipeline monitoring and error-handling concepts
 
 📂 **Data Flow**

@@ -31,7 +31,7 @@
 					"source": {
 						"type": "AzureSqlSource",
 						"sqlReaderQuery": {
-							"value": "@select * from @{pipeline().parameters.schema}.@{pipeline().parameters.schema} where @{pipeline().parameters.cdc_col} > '@{activity('last_cdc').output.values[0].cdc}'",
+							"value": "@select * from @{pipeline().parameters.schema}.@{pipeline().parameters.table} where @{pipeline().parameters.cdc_col} > '@{activity('last_cdc').output.firstRow.cdc}'",
 							"type": "Expression"
 						},
 						"queryTimeout": "02:00:00",
@@ -111,14 +111,9 @@
 						"referenceName": "cdc_json",
 						"type": "DatasetReference",
 						"parameters": {
-							"container": {
-								"value": "@pipeline().parameters.schema",
-								"type": "Expression"
-							},
-							"folder": {
-								"value": "@pipeline().parameters.table",
-								"type": "Expression"
-							}
+							"container": "bronze",
+							"folder": "DimUser_cdc",
+							"file": "cdc.json"
 						}
 					}
 				}

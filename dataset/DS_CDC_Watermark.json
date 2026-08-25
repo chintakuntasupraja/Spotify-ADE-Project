@@ -1,0 +1,40 @@
+{
+	"name": "DS_CDC_Watermark",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_DATALAKE",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"schema": {
+				"type": "string"
+			},
+			"table": {
+				"type": "string"
+			},
+			"cdc_col": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().cdc_col",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@dataset().schema",
+					"type": "Expression"
+				},
+				"fileSystem": {
+					"value": "@dataset().schema",
+					"type": "Expression"
+				}
+			}
+		},
+		"schema": {}
+	}
+}

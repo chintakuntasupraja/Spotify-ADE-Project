@@ -10,17 +10,17 @@ The solution implements production-oriented data engineering concepts including 
 Data Sources → Azure Data Factory → ADLS Gen2 → Azure Databricks → Delta Lake → Bronze → Silver → Gold
 
 🛠️ **Technologies Used**
-Azure Data Factory (ADF)
-Azure Data Lake Storage Gen2
-Azure Databricks
-Apache Spark / PySpark
-Delta Lake
-Lakeflow Declarative Pipelines
-SQL
+Azure Data Factory (ADF),
+Azure Data Lake Storage Gen2,
+Azure Databricks,
+Apache Spark / PySpark,
+Delta Lake,
+Lakeflow Declarative Pipelines,
+SQL,
 GitHub
 
 🚀 **Key Features**
-Incremental data ingestion using CDC/watermark concepts
+Incremental data ingestion using CDC/watermark concepts\n
 Dynamic and parameterized ADF pipelines
 Metadata-driven ingestion framework
 Backfill data processing

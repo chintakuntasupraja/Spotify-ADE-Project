@@ -1,0 +1,50 @@
+{
+	"name": "PL_AZURESQL_DATALAKE",
+	"properties": {
+		"activities": [
+			{
+				"name": "CPY_AZURESQL_DATALAKE",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"sqlReaderQuery": {
+							"value": "@select * from @{pipeline().parameters.schema}.@{pipeline().parameters.schema} where @{pipeline().parameters.cdc_col} > ",
+							"type": "Expression"
+						},
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "DS_AZURE_SQL",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"parameters": {
+			"schema": {
+				"type": "string"
+			},
+			"table": {
+				"type": "string"
+			},
+			"cdc_col": {
+				"type": "string"
+			}
+		},
+		"annotations": []
+	}
+}

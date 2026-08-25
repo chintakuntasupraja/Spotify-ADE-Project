@@ -12,7 +12,7 @@
 			"folder": {
 				"type": "string"
 			},
-			"cdc_col": {
+			"file": {
 				"type": "string"
 			}
 		},
@@ -22,7 +22,7 @@
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": {
-					"value": "@dataset().cdc_col",
+					"value": "@dataset().file",
 					"type": "Expression"
 				},
 				"folderPath": {

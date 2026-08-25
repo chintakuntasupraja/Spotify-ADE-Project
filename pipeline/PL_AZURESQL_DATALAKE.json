@@ -161,10 +161,8 @@
 				"typeProperties": {
 					"scripts": [
 						{
-							"type": {
-								"value": "select max(@{pipeline().parameters.cdc_col}) as cdc from @{pipeline().parameters.schema}.@{pipeline().parameters.table}",
-								"type": "Expression"
-							}
+							"type": "Query",
+							"text": "select max(@{pipeline().parameters.cdc_col}) as cdc from @{pipeline().parameters.schema}.@{pipeline().parameters.table}"
 						}
 					],
 					"scriptBlockExecutionTimeout": "02:00:00"

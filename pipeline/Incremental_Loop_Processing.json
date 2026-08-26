@@ -314,6 +314,34 @@
 						}
 					]
 				}
+			},
+			{
+				"name": "Alerts",
+				"type": "WebActivity",
+				"dependsOn": [
+					{
+						"activity": "Incremetal_loop",
+						"dependencyConditions": [
+							"Failed"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"method": "POST",
+					"url": "https://prod-10.southindia.logic.azure.com:443/workflows/4fd2bbd000ba48478d907e1352cbcd45/triggers/When_an_HTTP_request_is_received/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2FWhen_an_HTTP_request_is_received%2Frun&sv=1.0&sig=DiefZWOKmzA5akiQgnVXwivZGX5xaszm84VVzFxA2Ek",
+					"body": {
+						"value": "{\n    \"pipeline().Pipeline\":\"@{pipeline().Pipeline}\",\n    \"pipeline().RunId\":\"@{pipeline().RunId}\"\n}",
+						"type": "Expression"
+					}
+				}
 			}
 		],
 		"parameters": {

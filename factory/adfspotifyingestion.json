@@ -1,0 +1,15 @@
+{
+	"name": "adfspotifyingestion",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "southindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "ce678d0e-1686-44ae-b425-5be3c949523e",
+		"tenantId": "2bc66c3b-67f0-4f60-b9c9-4c62cddcccf9"
+	}
+}
